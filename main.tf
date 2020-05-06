@@ -18,13 +18,13 @@ module "my-cluster" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = "my-cluster"
   cluster_version = "1.14"
-  subnets         = ["subnet-abcde012", "subnet-bcde012a", "subnet-fghi345a"]
-  vpc_id          = "vpc-1234556abcdef"
+  subnets         = ["subnet-0a060da7b1fe7b900", "subnet-0fed60380b3270d0d"]
+  vpc_id          = "vpc-0c3fb682a83ba14f9"
 
   worker_groups = [
     {
-      instance_type = "m4.large"
-      asg_max_size  = 5
+      instance_type = "t2.medium"
+      asg_max_size  = 2
     }
   ]
 }
