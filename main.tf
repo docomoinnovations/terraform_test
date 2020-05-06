@@ -8,7 +8,9 @@ data "aws_eks_cluster_auth" "cluster" {
 
 provider "aws" {
   version = ">= 2.52.0"
-  region  = "ap-northeast-1"
+  region  = var.region
+  access_key = var.access_key
+  secret_key = var.secret_key
 }
 
 provider "kubernetes" {
