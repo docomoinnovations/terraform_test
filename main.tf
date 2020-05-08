@@ -8,7 +8,7 @@ data "aws_eks_cluster_auth" "cluster" {
 
 provider "aws" {
   version = ">= 2.52.0"
-  region  = "ap-northeast-1" 
+  region  = "us-west-2" 
   access_key = var.access_key
   secret_key = var.secret_key
 }
@@ -24,7 +24,7 @@ provider "kubernetes" {
 module "my-cluster" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = "my-cluster"
-  cluster_version = "1.14"
+  cluster_version = "1.15"
   subnets         = ["subnet-0c20a0fbc0b787b9a", "subnet-09805e95f3a7daaf6"]
   vpc_id          = "vpc-056881ac09142937a"
 
